@@ -19,3 +19,4 @@ Onica IoTanium Developer Kit
    aws_iot_analytics
    aws_iot_data_vis
    aws_iot_api_gw
+   advanced
