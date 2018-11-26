@@ -82,7 +82,7 @@ This walkthough assumes you have:
     :alt: ../img/hello-world-cert6.png
     :width: 1024px
 
-2 - Add your IoT Endpoint to ``hello_world.py``
+2 - Add your IoT Endpoint to `hello_world.py`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Back in the AWS IoT Console, click **Settings**, and copy the **Endpoint** value into your clipboard.
 
