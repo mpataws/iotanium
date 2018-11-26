@@ -95,7 +95,7 @@ Your IoTanium device includes a version of the Python REPL called the WebREPL, w
     ws://192.168.1.243:8266/                               
     >>>   
 
-- Copy the WebREPL target value from your console output, similar to ``ws://192.168.1.243:8266/``, being careful to include the ``ws://`` and the trailing ``/``. Note that your output will be a similar format, but a differnet address.  **IMPORTANT: Losing this value will require entering Safe Mode, and repeating steps 2-4!**, so consider saving this value in a text file to avoid having to repeat the steps above.
+- Copy the WebREPL target value from your console output, similar to ``ws://192.168.1.243:8266/``, being careful to include the ``ws://`` and the trailing ``/``. Note that your output will be a similar format, but a different address.  **IMPORTANT: Losing this value will require entering Safe Mode, and repeating steps 2-4!**, so consider saving this value in a text file to avoid having to repeat the steps above.
 
 6 - Connect to the WebREPL over WiFi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

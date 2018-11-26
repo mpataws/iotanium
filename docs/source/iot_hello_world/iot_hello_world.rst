@@ -150,3 +150,5 @@ Send 'Hello World!' to AWS IoT
     :align: center
     :alt: ../img/hello-world-9.png
     :width: 1024px
+
+- To stop sending messages, type ``CTRL+C`` in your WebREPL console terminal.
