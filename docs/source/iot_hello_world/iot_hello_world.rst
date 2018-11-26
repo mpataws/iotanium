@@ -12,7 +12,7 @@ This walkthough assumes you have:
 
 ----
 
-1 - Configure AWS IoT, and Download Certificates
+Configure AWS IoT, and Download Certificates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Log in to your AWS account Management Console
 - On the Management Console Dashboard, use the search tool tool to locate ``IoT Core``, and click on it.
@@ -82,7 +82,7 @@ This walkthough assumes you have:
     :alt: ../img/hello-world-cert6.png
     :width: 1024px
 
-2 - Add your IoT Endpoint to `hello_world.py`
+Add your IoT Endpoint to `hello_world.py`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Back in the AWS IoT Console, click **Settings**, and copy the **Endpoint** value into your clipboard.
 
@@ -103,7 +103,7 @@ This walkthough assumes you have:
 - **Save** the file, and close the text editor.
 
 
-3 - Upload files to your IoTanium device
+Upload files to your IoTanium device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Back in the WebREPL session in your browser, ensure your session is still active. Place your cursor in the REPL console, and press the **Enter** key several times.  If your session is active, each press should return a Python REPL prompt ``>>>``.  If not, click **Disconnect**, refresh the page, and reconnect as before.  Do not proceed until your WebREPL sesssion is active.
 
@@ -123,7 +123,7 @@ This walkthough assumes you have:
 - If any uploaded file is missing from the list of files on the device, upload and list again until all three files are listed on the device.
 
 
-4 - Send 'Hello World!' to AWS IoT
+Send 'Hello World!' to AWS IoT
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - In the WebREPL terminal, run the ``hello_world.py`` script, and notice the message publishing logs.  Note: to execute a script manually in Micropython, you ``import`` the script as a module, leaving off the ``.py`` extension as shown below.
 
