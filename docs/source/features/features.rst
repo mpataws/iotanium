@@ -99,11 +99,31 @@ Using the WebREPL console terminal, you can experiment with the different functi
     >>> iotanium.read_all()
     {"touch": 375, "hall": 69, "temp": 131}
 
-Now, try to vary the sensor readings, and run the functions again to see the values change.  Examples:
+Now, try to vary the sensor readings, and run each function again to see the values change.  Examples:
 
 - Place the IoTanium board in a warm place, in direct sunlight, or touch the metal MCU case with your hand to change the ``temp()`` reading (it will change *very* little due to the low resolution of the onboard temp sensor)
 - Place a magnet near the MCU chip, and see the ``hall()`` reading change.
 - Insert a jumper wire into the breadboard, next to pin12 on the IoTanium breakout board.  Touch the free end of the jumper with you finger, and see the ``touch()`` reading change.
+
+Next, try to read all the sensor values continuously.  Using the methods described above, you can vary the sensor readings in realtime, and watch them change in the WebREPL output::
+
+    >>> while True:
+    ...     iotanium.read_all()
+    # press Enter 4 times
+    {"touch": 382, "hall": 70, "temp": 132}
+    {"touch": 382, "hall": 70, "temp": 132}
+    {"touch": 382, "hall": 68, "temp": 132}
+    {"touch": 382, "hall": 71, "temp": 132}
+    ...
+    ...
+    ...
+
+    # CTRL + C to break
+    Traceback (most recent call last):
+    File "<stdin>", line 2, in <module>
+    KeyboardInterrupt: 
+    >>> 
+
 
 Note that on-chip sensor readings are not calibrated to any particular scale, nor are they expected to be terribly consistent from device to device.  For example, the temperature reading is just a raw sensor value, it does not map directly to an actual temperature value.  For more reliable readings, we will use more accurate sensors in a later section.
 
