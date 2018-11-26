@@ -76,7 +76,38 @@ Below are descriptions of the the available convenience functions:
 - ``iotanium.touch()`` - reads the value of an onboard capacitive touch sensor, mapped to PIN12 on the IoTanium board.
 - ``iotanium.read_all()`` - reads all onboard sensor values above, and returns them in JSON format.
 
-The following functions are also included, but are not used in this walkthrough, and should only be used by users who are comfortable with their operation:
+Using the WebREPL console terminal, you can experiment with the different functions above.    Here are some examples::
+
+    >>> iotanium.led('on')
+    # STATUS LED turns on
+
+    >>> iotanium.led('off')
+    # STATUS LED turns off
+
+    >>> iotanium.blink(500, 10)
+    # STATUS LED blinks every 500 milliseconds, for 10 seconds
+
+    >>> iotanium.hall()
+    73
+
+    >>> iotanium.temp()
+    131
+
+    >>> iotanium.touch()
+    375
+
+    >>> iotanium.read_all()
+    {"touch": 375, "hall": 69, "temp": 131}
+
+Now, try to vary the sensor readings, and run the functions again to see the values change.  Examples:
+
+- Place the IoTanium board in a warm place, in direct sunlight, or touch the metal MCU case with your hand to change the ``temp()`` reading (it will change *very* little due to the low resolution of the onboard temp sensor)
+- Place a magnet near the MCU chip, and see the ``hall()`` reading change.
+- Insert a jumper wire into the breadboard, next to pin12 on the IoTanium breakout board.  Touch the free end of the jumper with you finger, and see the ``touch()`` reading change.
+
+Note that on-chip sensor readings are not calibrated to any particular scale, nor are they expected to be terribly consistent from device to device.  For example, the temperature reading is just a raw sensor value, it does not map directly to an actual temperature value.  For more reliable readings, we will use more accurate sensors in a later section.
+
+The following functions are also supported, but are not used in this walkthrough, and should only be used by users who are comfortable with their operation:
 
 - ``iotanium.setup()`` - connects to WiFi networks configured in ``iotanium_cfg.json``.  If no config is present, or all WiFi connections fail, will automatically enable the Access Point for troubleshooting.
 - ``iotanium.connect_sta_if()`` - connects to WiFi networks configured in ``iotanium_cfg.json``, but does not enable the AP on failure or missing config.
@@ -88,7 +119,7 @@ While unlikely, there are some failure modes that could make it difficult for a 
 
 - Running code that spawn resource intensive `tight loops`, that cause the WebREPL to be slow or unresponsive.
 
-- Automatic execution of `main.py`, without a successful connection to WiFi or enabling the WebREPL.  This is a default behavior of Micropython, that will be covered in a later section.
+- Automatic execution of ``main.py``, without a successful connection to WiFi or enabling the WebREPL.  This is a default behavior of Micropython, that will be covered in a later section.
 
 - Automatic execution of code from ``boot.py``, without a successful connection to WiFi or enabling the WebREPL.   
 
