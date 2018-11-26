@@ -30,7 +30,7 @@ Your IoTanium device includes a version of the Python REPL called the WebREPL, w
 
 2 - Connect to Access Point
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Find the small rectangular LED labelled `STATUS` on the devic, it is located just above the blue button on the IoTanium board.  The STATUS LED is used to indicate when the device enters Access Point (AP mode), which will allow your workstation to connect to the device via WiFi.
+- Find the small rectangular LED labelled `STATUS`, it is located just above the blue button on the IoTanium device.  The STATUS LED is used to indicate when the device enters Access Point (AP mode), which will allow your workstation to connect to the device via WiFi.
 - Briefly unplug the power from the device, and plug it back in.  After a moment, the STATUS LED will blink rapidly for 5 seconds, indicating AP mode.
 - Connect your workstation WiFi to the network named ``IoTanium-######``, with password ``iotanium``
 
@@ -73,7 +73,7 @@ Your IoTanium device includes a version of the Python REPL called the WebREPL, w
 
 - **Save the file**
 - Back in your WebREPL browser window, click **Choose File**, browse to the saved file above, and click **Send to device**
-- Ensure your WebREPL indicates ``Sent iotanium_cfg.json, 199 bytes`` or similar message, before continuing:
+- Ensure your WebREPL indicates ``Sent iotanium_cfg.json, 199 bytes`` or similar message, before continuing (your file's size in bytes may be different):
 
 .. image:: ../img/upload_wifi_cfg.png
     :width: 400px
@@ -87,10 +87,10 @@ Your IoTanium device includes a version of the Python REPL called the WebREPL, w
     >>> iotanium.setup()
     config file ./iotanium_cfg.json found
     wifi scanning
-    found wlan MY_WIFI
-    connecting to wlan home office/MY_WIFI...
-    connection to wlan home office/MY_WIFI successful! To continue:
-    1. reconnect your workstation to wifi network: MY_WIFI
+    found wlan ATT288-5G
+    connecting to wlan my home wifi/ATT288-5G...
+    connection to wlan my home wifi/ATT288-5G successful! To continue:
+    1. reconnect your workstation to wifi network: ATT288-5G
     2. once reconnected, connect to webrepl on:
     ws://192.168.1.243:8266/                               
     >>>   
@@ -103,7 +103,7 @@ Your IoTanium device includes a version of the Python REPL called the WebREPL, w
 - Disconnect your workstation from the ``IoTanium-######`` wireless network.
 - Reconnect your workstation to your local WiFi network.
 - **Refresh** the WebREPL page in your browser.
-- In the connection field at the top of the WebREPL page, paste the value similar to ``ws://192.168.1.243:8266/``, copied in step 4 above.
+- In the connection field at the top of the WebREPL page, paste the value you copied in step 4 above.
 - Click the **Connect** button, and provide password ``iotanium`` when prompted.  You should now be connected to your device via WebREPL over your wifi::
 
     Welcome to MicroPython!

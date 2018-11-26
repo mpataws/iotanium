@@ -232,7 +232,7 @@
       ws.close();
     } else {
       document.getElementById('url').disabled = true;
-      document.getElementById('button').value = "Disconnect";
+      document.getElementById('button').textContent = "Disconnect";
       connected = true;
       connect(document.getElementById('url').value);
     }
@@ -240,7 +240,7 @@
 
   function prepare_for_connect() {
     document.getElementById('url').disabled = false;
-    document.getElementById('button').value = "Connect";
+    document.getElementById('button').textContent = "Connect";
   }
 
   function update_file_status(s) {
