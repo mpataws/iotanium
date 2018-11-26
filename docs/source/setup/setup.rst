@@ -2,7 +2,7 @@
 ==============
 
 Unboxing and Assembly
----------------------
+--------------------- 
 - If you have not done so already, unbox and assemble your IoTanium Developer Kit using the instructions provided below (click image to enlarge):
 
 .. image:: ../img/assembly.png
@@ -34,7 +34,7 @@ Your IoTanium device includes a version of the Python REPL called the WebREPL, w
 - Briefly unplug the power from the device, and plug it back in.  After a moment, the STATUS LED will blink rapidly for 5 seconds, indicating AP mode.
 - Connect your workstation WiFi to the network named ``IoTanium-######``, with password ``iotanium``
 
-3 - Connect to the IoTanium WebREPL
+3 - Connect to the WebREPL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - In the root of repository you downloaded in step 1 above, browse to ``webrepl/webrepl.html``, and open the .html file in a browser.
 - Accept the default values, and click the **Connect** button.
@@ -97,7 +97,7 @@ Your IoTanium device includes a version of the Python REPL called the WebREPL, w
 
 - Copy the WebREPL target value from your console output, similar to ``ws://192.168.1.243:8266/``, being careful to include the ``ws://`` and the trailing ``/``. Note that your output will be a similar format, but a differnet address.  **IMPORTANT: Losing this value will require entering Safe Mode, and repeating steps 2-4!**, so consider saving this value in a text file to avoid having to repeat the steps above.
 
-5 - Connect to Device over WiFi
+5 - Connect to the WebREPL over WiFi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Click **Disconnect** in the WebREPL browser window.
 - Disconnect your workstation from the ``IoTanium-######`` wireless network.
