@@ -6,17 +6,12 @@
 
 ----
 
-Onica IoTanium Developer Kit Preview - Quickstart
+Onica IoTanium Developer Kit Lab
 ==================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   setup/setup
-   iot_hello_world/iot_hello_world
-   features/features
-   .. sensors/sensors
-   .. putting_all_together/putting_all_together
-   .. advanced/advanced
-   .. troubleshooting/troubleshooting
+   instructor/setup
+   iotanium_lab/lab
