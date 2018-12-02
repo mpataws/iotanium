@@ -1,4 +1,4 @@
-AWS Account Setup (Lab Instructor Only)
+00 - AWS Account Setup (Lab Instructor Only)
 ==============
 
 - Use a sandbox/lab account for this lab.  Onica users can use thier sso lab account.
@@ -49,6 +49,7 @@ AWS Account Setup (Lab Instructor Only)
     - The AWS IoT Core ``Endpoint`` value
     - The certificate file (GUID.cert.pem)
     - The private key file (GUID.private.key)
+    - SSID, username, and password for a wifi network provided by the facility hosting the lab.  This network must not require the use any web interface during the login process, just simple u/p auth.  If such a network is not available, bring a wifi hotspot.  The lab activities cannot be completed using a network that requires web auth. 
 
 - When the lab is finished, tear down::
 

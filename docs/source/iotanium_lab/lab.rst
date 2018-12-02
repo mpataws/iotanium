@@ -1,4 +1,4 @@
-IoTanium Lab
+01 - Setting up your IoTanium DevKit
 ==============
 
 Prerequisites
@@ -11,7 +11,29 @@ Ensure you have been provided the following by your lab instructor:
 - Two IoT Core certificate files
     - Certificate file, named ``######.cert.pem``
     - Private key file, named ``######.private.key``
+- A username and password for the local wifi network
 
+----
+
+Unboxing and Assembly
+--------------------- 
+- Unbox and assemble your IoTanium Developer Kit using the instructions provided below (click image to enlarge):
+
+.. image:: ../img/assembly.png
+    :width: 2550px
+    :align: center
+    :alt: img/assembly.png
+
+- Power your device with the micro-usb cable provided to the micro-usb port on the IoTanium board.  You can use any standard USB port, or the USB wall adapter provided.
+----
+
+Download or Clone Repository
+--------------------- 
+- **Direct Download**
+    - Download the IoTanium Git repository `here <https://github.com/onicagroup/iotanium/archive/preview.zip>`_.
+    - Unzip the downloaded file on your local workstation
+- **Git Clone**
+    - Git users can clone the repository directly: ``git clone -b preview https://github.com/onicagroup/iotanium.git``
 ----
 
 Connect to Your Device
@@ -24,16 +46,11 @@ Your IoTanium device supports a version of the Python REPL called the WebREPL, w
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Find the small rectangular LED labelled `STATUS`, it is located just above the blue button on the IoTanium device.  The STATUS LED is used to indicate when the device enters Access Point (AP mode), which will allow your workstation to connect to the device via WiFi.
 - Briefly unplug the power from the device, and plug it back in.  After a moment, the STATUS LED will blink rapidly for 5 seconds, indicating AP mode.
-- Connect your workstation WiFi to the network named ``IoTanium-######``, with password ``iotanium``
+- In your IoTanium Developer kit, you will find a paper card with your board's Access Point (AP) network SSID.  Find the card and note the network SSID.
+- Connect your workstation WiFi to the network you noted in the previous step. ``IoTanium-######``, with password ``iotanium``.   **IMPORTANT:  In a lab environment with many users, the network SSID's will look very similar.  Pay `very` close attention to your network ID, and only connect to the correct network for your device!!**
 
 2 - Connect to the WebREPL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--Download or Clone Repository
-    - **Direct Download**
-        - Download the IoTanium Git repository `here <https://github.com/onicagroup/iotanium/archive/preview.zip>`_.
-        - Unzip the downloaded file on your local workstation
-    - **Git Clone**
-        - Git users can clone the repository directly: ``git clone -b preview https://github.com/onicagroup/iotanium.git``
 - In the repository folder, browse to ``webrepl/webrepl.html``, and open the .html file in a browser.
 - Accept the default values, and click the **Connect** button.
 - When prompted, provide password ``iotanium`` (password will not show while typing, this is normal)
