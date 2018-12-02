@@ -30,7 +30,23 @@ AWS Account Setup
     git checkout step-10
     npm start
 
-- Observe the console log output of stack deployment progress.  When the stack deployment completes, **take note** of the API-Gateway ServiceEndpoint value similar to the one below.  You will need to provide this to the lab attendees.  You can also get this value later from the API-Gatway console::
+- Observe the console log output of stack deployment progress.  When the stack deployment completes, **take note** of the API-Gateway ServiceEndpoint value similar to the one below. You can also get this value later from the API-Gatway console::
 
     ServiceEndpoint: https://o2ykzz9u73.execute-api.us-east-1.amazonaws.com/company_name
+
+- In the AWS IoT console in region us-east-1 https://console.aws.amazon.com/iot/home?region=us-east-1#/dashboard:
+    - Create a new certificate, use "One-click certificate creation (recommended)" 
+    - **download** the cert (GUID.cert.pem) and private key (GUID.private.key)
+    - activate the certificate
+    - attach a suitable IAM policy
+
+- Have the following prepared to share with the lab attendees:
+    - The ``ServiceEndpoint`` value noted in the previous step
+    - The certificate file (GUID.cert.pem)
+    - The private key file (GUID.private.key)
+
+- When the lab is finished, tear down::
+
+    # back in your Cloud9 environment
+    node_modules/.bin/sls remove --stage=company_name
 
