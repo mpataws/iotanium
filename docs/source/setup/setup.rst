@@ -13,6 +13,15 @@ Unboxing and Assembly
 - Power your device with the micro-usb cable provided to the micro-usb port on the IoTanium board.  You can use nay standard USB port, or the USB wall adapter provided.
 ----
 
+Download or Clone Repository
+--------------------- 
+- **Direct Download**
+    - Download the IoTanium Git repository `here <https://github.com/onicagroup/iotanium/archive/preview.zip>`_.
+    - Unzip the downloaded file on your local workstation
+- **Git Clone**
+    - Git users can clone the repository directly: ``git clone -b preview https://github.com/onicagroup/iotanium.git``
+----
+
 Connect to Your Device
 ---------------------
 You IoTanium development board comes pre-flashed with an optimized version of `Micropython <http://micropython.org/>`_, a lean and efficient implementation of the Python 3 programming language that includes a small subset of the Python standard library, and is optimised to run on microcontrollers and in constrained environments.  Python utilizes a interactive 'Read-Evaluate-Print-Loop' (REPL) as a programming interface, which takes single user inputs or expressions, evaluates them, and returns the results to the user.  The REPL provides an interactive ``>>>`` prompt when working with Python directly in a command line terminal.
@@ -27,12 +36,6 @@ Your IoTanium device supports a version of the Python REPL called the WebREPL, w
 
 2 - Connect to the WebREPL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--Download or Clone Repository
-    - **Direct Download**
-        - Download the IoTanium Git repository `here <https://github.com/onicagroup/iotanium/archive/preview.zip>`_.
-        - Unzip the downloaded file on your local workstation
-    - **Git Clone**
-        - Git users can clone the repository directly: ``git clone -b preview https://github.com/onicagroup/iotanium.git``
 - In the repository folder, browse to ``webrepl/webrepl.html``, and open the .html file in a browser.
 - Accept the default values, and click the **Connect** button.
 - When prompted, provide password ``iotanium`` (password will not show while typing, this is normal)
