@@ -1,4 +1,4 @@
-AWS Account Setup
+AWS Account Setup (Lab Instructor Only)
 ==============
 
 - Use a sandbox/lab account for this lab.  Onica users can use thier sso lab account.
@@ -40,8 +40,13 @@ AWS Account Setup
     - activate the certificate
     - attach a suitable IAM policy
 
-- Have the following prepared to share with the lab attendees:
-    - The ``ServiceEndpoint`` value noted in the previous step
+- IN the AWS IoT Console, choose **Settings** and note the IoT Endpoint Value, similar to::
+
+    1234abcd5678-ats.iot.us-east-1.amazonaws.com
+
+- Have the following items gathered in previous steps, prepared to share with the lab attendees:
+    - The AWS API-Gateway ``ServiceEndpoint`` value
+    - The AWS IoT Core ``Endpoint`` value
     - The certificate file (GUID.cert.pem)
     - The private key file (GUID.private.key)
 

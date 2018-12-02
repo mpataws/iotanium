@@ -1,16 +1,17 @@
-01 - Setup
+IoTanium Lab
 ==============
 
-Unboxing and Assembly
+Prerequisites
 --------------------- 
-- Unbox and assemble your IoTanium Developer Kit using the instructions provided below (click image to enlarge):
+Ensure you have been provided the following by your lab instructor:
 
-.. image:: ../img/assembly.png
-    :width: 2550px
-    :align: center
-    :alt: img/assembly.png
+- An IoTanium Developer Kit
+- An AWS API-Gateway ``ServiceEndpoint`` value
+- An AWS IoT Core ``Endpoint`` value
+- Two IoT Core certificate files
+    - Certificate file, named ``######.cert.pem``
+    - Private key file, named ``######.private.key``
 
-- Power your device with the micro-usb cable provided to the micro-usb port on the IoTanium board.  You can use nay standard USB port, or the USB wall adapter provided.
 ----
 
 Connect to Your Device
