@@ -13,5 +13,5 @@ Onica IoTanium Developer Kit Lab
    :maxdepth: 2
    :caption: Contents:
 
-   instructor/setup
-   iotanium_lab/lab
+   instructor/instructor
+   setup/setup
