@@ -17,6 +17,7 @@ Onica IoTanium Developer Kit Preview - Quickstart
    iot_hello_world/iot_hello_world
    features/features
    sensors/sensors
+   diy_challenge/diy_challenge
    .. putting_all_together/putting_all_together
    .. advanced/advanced
    .. troubleshooting/troubleshooting

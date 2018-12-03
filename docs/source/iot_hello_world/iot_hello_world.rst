@@ -91,7 +91,7 @@ Add your IoT Endpoint to `hello_world.py`
     :alt: ../img/hello-world-7.png
     :width: 1024px
 
-- In your IoTanium repository, navigate to ``docs/source/iot_hello_world/hello_world.py``, and open that file in a text editor.
+- In your IoTanium repository, navigate to ``hello_world.py`` in the root directory of the repo, and open that file in a text editor.
 - Edit the line below, pasting the **Endpoint** value copied above to replace the default value::
 
     # original line
