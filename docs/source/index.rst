@@ -16,7 +16,7 @@ Onica IoTanium Developer Kit Preview - Quickstart
    setup/setup
    iot_hello_world/iot_hello_world
    features/features
-   .. sensors/sensors
+   sensors/sensors
    .. putting_all_together/putting_all_together
    .. advanced/advanced
    .. troubleshooting/troubleshooting
