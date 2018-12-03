@@ -116,7 +116,7 @@ Your IoTanium device supports a version of the Python REPL called the WebREPL, w
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Click **Disconnect** in the WebREPL browser window.
 - Disconnect your workstation from the ``IoTanium-######`` wireless network.
-- Reconnect your workstation to your local WiFi network.
+- Reconnect your workstation to your local WiFi network.  **Note: this must be the same network to which you connected the IoTanium board by uploading the username and password**
 - **Refresh** the WebREPL page in your browser.
 - In the connection field at the top of the WebREPL page, paste the value you copied in step 4 above.
 - Click the **Connect** button, and provide password ``iotanium`` when prompted.  You should now be connected to your device via WebREPL over your wifi::

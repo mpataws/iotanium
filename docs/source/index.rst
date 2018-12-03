@@ -15,3 +15,4 @@ Onica IoTanium Developer Kit Lab
 
    instructor/instructor
    setup/setup
+   iot_hello_world/hello_world

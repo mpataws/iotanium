@@ -1,8 +1,7 @@
-import ubinascii
 import machine
 import json
 import umqtt.simple as mqtt
-from time import sleep
+from time import sleep, time
 import iotanium
 import os
 
@@ -12,19 +11,23 @@ def read_pem(ext):
             contents = f.read()
     return contents
 
-fnames = os.listdir()
-thingId = ubinascii.hexlify(machine.unique_id())
+# config
+device_id = 'first_last'
+company_name = 'your_company_name'
+endpoint = 'aws_iot_endpoint_dns_hostname'
+
 publish_rate = 5 # seconds between publishing messages
-topic = 'iotanium'
-endpoint = 'REPLACE_WITH_YOUR_ENDPOINT'
+fnames = os.listdir()
 cert = read_pem('.crt')
 key = read_pem('.key')
+topic = "iotsample/%s/%s/data" % (company_name, device_id)
 
-client = mqtt.MQTTClient(thingId,endpoint,ssl = True, ssl_params = {'key': key,'cert': cert})
-client.connect()
+client = mqtt.MQTTClient(device_id,endpoint,ssl = True, ssl_params = {'key': key,'cert': cert})
 
 while True:
-    data = {'message': 'Hello World!'}
+    client.connect()
+    data = {'message': "Hello World from %s" % device_id}
     client.publish(topic, json.dumps(data))
     print("published to topic %s: %s" % (topic, data))
+    client.disconnect()
     sleep(publish_rate)
