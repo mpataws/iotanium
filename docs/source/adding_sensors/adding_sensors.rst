@@ -1,52 +1,29 @@
 03 - Adding Sensors
 ==============
 
-Add Config Values to `hello_world.py`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- In your IoTanium repository, navigate to ``hello_world.py`` in the root directory, and open that file in a text editor.
-- Edit the lines below, replacing the values with the correct values.  **all values are 100% lower case exactly as shown**::
+Add a Temperature and Humidity Sensor
+--------------------- 
+Locate the small bag of components included with your IoTanium DevKit.  **Note: the jumper wire colors in your DevKit may not match the colors in the diagrams below.  You can use any color wire to make any connection, the wire color is not important.**  Follow the steps below to add a DHT-11 temperature and humidity sensor to your project:
 
-    # config
-    device_id = 'first_last'
-    company_name = 'your_company_name'
-    endpoint = 'aws_iot_endpoint_dns_hostname'
+- The lower portion of your IoTanium hardware is a breadboard adapter.  In order for the lab wiring diagrams to work as expected, your breadboard adapter must be oriented correctly on the breadboard.  To do so, **ensure that pin 2 on the breadboard adapter is inserted in hole E1 on the breadboard, and pin 15 on the breadboard adapter is inserted in hole F1 on the breadboard (see diagram below).**
+- Locate the blue DHT-11 sensor, and turn it so the holes are facing you.  Insert the four wires into holes E20 - E23 on the breadboard.
+- Locate a 10K ohm resistor.  It will be light brown with brown, black, orange, and gold bands.  Connect one end to hole B21, and the other end to any free hole on the red (+) rail on the breadboard.  This is a 'pullup' resistor that will make the DHT11 readings more reliable.
+- With jumper wires, make the following connections:
+   - A20 to any free hole on the red (+) rail.  This provides power to the DHT11.
+   - C21 to C3.  This connects the 'data' pin on the DHT 11 to the input pin 4 on the IoTanium.
+   - A23 to any free hole on the black (-) rail.  This provides ground to the DHT11.
 
-- **Save** the file, and close the text editor.
+- Before continuing, inspect and double check the wiring above, to avoid potentially damaging or destroying your IoTanium developer board.
+- When you are confident your wiring is correct, use jumper wires to connect power and ground from your circuit to the dev board:
+   - B15 to any free hole on the red (+) rail.
+   - H15 to any free hole on the black (-) rail.
 
+Your finished circuit should look like the image below, note that the third pin on the DHT-11 is not used:
 
-Upload files to your IoTanium device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Back in the WebREPL session in your browser, ensure your session is still active. Place your cursor in the REPL console, and press the **Enter** key several times.  If your session is active, each press should return a Python REPL prompt ``>>>``.  If not, click **Disconnect**, refresh the page, and reconnect as before.  Do not proceed until your WebREPL sesssion is active.
+.. image:: ../img/temp_humid_breadboard.png
+    :width: 2550px
+    :align: center
+    :alt: img/assembly.png
 
-- Using the same **Choose File>>Send to device** method that you used during Setup to upload your WiFi connection info, transfer the following three files one at a time to the device:
-
-1. The certificate provided by your instructor, ending in ``-certificate.pem.crt``
-2. The private key provided by your instructor, ending in ``-private.pem.key``
-3. The ``hello_world.py`` file, that you edited above.
-    
-- Ensure each file uploaded sucessfully, by listing the files in the WebREPL::
-
-    >>> import os
-    >>> os.listdir()
-    ['boot.py', 'iotanium_cfg.json', 'ab12345678-certificate.pem.crt', 'ab12345678-private.pem.key', 'hello_world.py']
-    >>> 
-
-- If any uploaded file is missing from the list of files on the device, upload and list again until all three files are listed on the device.
-
-
-Send 'Hello World!' to AWS IoT
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- In the WebREPL terminal, run the ``hello_world.py`` script, and notice the message publishing logs.  Note: to execute a script manually in Micropython, you ``import`` the script as a module, leaving off the ``.py`` extension as shown below.
-
-    >>> import hello_world
-    published to topic iotsample/company_name/first_last/data: {'message': 'Hello World from first_last'}
-    published to topic iotsample/company_name/first_last/data: {'message': 'Hello World from first_last'}
-    ...
-    ...
-
-- To stop sending messages, type ``CTRL+C`` in your WebREPL console terminal, you will see the execution break below, which is normal::
-
-    Traceback (most recent call last):
-    File "<stdin>", line 2, in <module>
-    KeyboardInterrupt: 
-    >>> 
+Add a Light Sensor
+--------------------- 
