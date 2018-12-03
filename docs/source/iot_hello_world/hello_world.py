@@ -21,10 +21,14 @@ cert = read_pem('.crt')
 key = read_pem('.key')
 
 client = mqtt.MQTTClient(thingId,endpoint,ssl = True, ssl_params = {'key': key,'cert': cert})
-client.connect()
 
 while True:
-    data = {'message': 'Hello World!'}
+    client.connect()
+    data = {'message': "Hello World from %s" % thingId}
     client.publish(topic, json.dumps(data))
     print("published to topic %s: %s" % (topic, data))
+    client.disconnect()
     sleep(publish_rate)
+
+
+    
