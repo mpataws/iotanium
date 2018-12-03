@@ -23,7 +23,7 @@ Your finished circuit should look like the image below, note that the third pin 
 .. image:: ../img/temp_humid_breadboard.png
     :width: 2550px
     :align: center
-    :alt: img/assembly.png
+    :alt: img/temp_humid_breadboard.png
 
 Back in your WebREPL session, run the following commands to interact with the DHT-11 sensor::
 
@@ -43,3 +43,37 @@ Experiment with changing the temperature and/or humidity reading of the sensor, 
 
 Add a Light Sensor
 --------------------- 
+Locate the photocell in the bag of components.  It has two long legs, and a wavy pattern on its face (see image below to help identify your photocell).  The photocell is used to measure the intensity of light.  Follow the instructions below to connect your photocell to your IoTanium dev board:
+
+- **Disconnect** the following connections made in the previous step:
+   - The connection between B15 and the red (+) rail.
+   - The connection between H15 and the black (-) rail.
+
+- Connect your photocell to E28 and E30.  The component does not have a polarity, so it can be connected either way.
+- Locate another 10K ohm resistor (light brown with brown, black, orange, and gold bands).  Connect it between C28 and any free hole on the black (-) rail.  This is a `pulldown` resistor to limit the current of the photocell to a controlled range, and provide a path to ground.
+- With jumper wires, make the following connections:
+   - D30 to any free hole on the red (+) rail. This will power the photocell.
+   - D28 to H13.  This will connect the output side of the photocell to pin 36 on the dev board.
+
+- Before continuing, inspect and double check the wiring above, to avoid potentially damaging or destroying your IoTanium developer board.
+- When you are confident your wiring is correct, use jumper wires to connect power and ground from your circuit to the dev board:
+   - B15 to any free hole on the red (+) rail.
+   - H15 to any free hole on the black (-) rail.
+
+.. image:: ../img/temp_humid_ldr_breadboard.png
+    :width: 2550px
+    :align: center
+    :alt: temp_humid_ldr_breadboard.png
+
+Back in your WebREPL session, run the following commands to interact with the light sensor::
+
+    >>> import machine
+    >>> adc_pin = machine.Pin(36)
+    >>> adc = machine.ADC(adc_pin)
+    >>> adc.read()
+    4095
+    >>> 
+
+Notice that we are using the ESP32's onboard `Analog to Digital <https://en.wikipedia.org/wiki/Analog-to-digital_converter>`_ capabilies.  The photocell is an analog sensor, so we need to convert its reading to a digital value to use in code.
+
+Experiment with covering up the photocell with your hand, and taking the reading again.  What do you observe?
