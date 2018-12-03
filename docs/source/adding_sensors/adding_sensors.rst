@@ -1,4 +1,4 @@
-03 - Adding Sensors
+04 - Adding Sensors
 ==============
 
 Add a Temperature and Humidity Sensor

@@ -16,4 +16,5 @@ Onica IoTanium Developer Kit Lab
    instructor/instructor
    setup/setup
    iot_hello_world/iot_hello_world
+   features/features
    adding_sensors/adding_sensors
