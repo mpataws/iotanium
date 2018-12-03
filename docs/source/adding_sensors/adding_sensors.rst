@@ -25,5 +25,21 @@ Your finished circuit should look like the image below, note that the third pin 
     :align: center
     :alt: img/assembly.png
 
+Back in your WebREPL session, run the following commands to interact with the DHT-11 sensor::
+
+    >>> import machine
+    >>> import dht
+    >>> d = dht.DHT11(machine.Pin(4))
+    >>> d.measure()
+    >>> d.temperature()
+    21
+    >>> d.humidity()
+    51
+    >>> 
+
+Note that ``d.measure()`` reads the values from the sensor. ``d.temperature()`` and ``d.humidity()`` only `hold` the values, and only update when ``d.measure()`` is run again.  
+
+Experiment with changing the temperature and/or humidity reading of the sensor, and taking more readings to show the change.  You can do this by placing the unit in direct sunlight, breathing warm air on the sensor, etc.
+
 Add a Light Sensor
 --------------------- 
