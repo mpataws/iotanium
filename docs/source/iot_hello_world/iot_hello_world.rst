@@ -9,7 +9,7 @@ This walkthough assumes you have the prerequisites, succesfully completed the as
 
 Add Config Values to `hello_world.py`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- In your IoTanium repository, navigate to ``docs/source/iot_hello_world/hello_world.py``, and open that file in a text editor.
+- In your IoTanium repository, navigate to ``hello_world.py`` in the root directory, and open that file in a text editor.
 - Edit the lines below, replacing the values with the correct values.  **all values are 100% lower case exactly as shown**::
 
     # config
