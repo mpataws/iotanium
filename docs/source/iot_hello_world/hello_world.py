@@ -28,7 +28,4 @@ while True:
     client.publish(topic, json.dumps(data))
     print("published to topic %s: %s" % (topic, data))
     client.disconnect()
-    sleep(publish_rate)
-
-
-    
+    sleep(publish_rate) 
