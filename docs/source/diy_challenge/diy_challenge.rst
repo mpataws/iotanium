@@ -11,15 +11,13 @@ Here are some hints to help you get started:
 
 - Pay attention, the ``hello_world.py`` script is missing a library you need to read one of your sensors! Inspect what you previously did to read the sensors successfully, and add any missing libraries to the ``import`` section at the top of your script.
 
-- Leave the ``topic`` values unchanged in your script.  That is, similar to::
-
-   iotsample/company_name/first_last/data
+- Leave the ``topic`` and ``endpoint`` values unchanged in your script.
 
 - You have completed the challenge successfully when your device is sending json data like that shown below, to the same AWS IoT endpoint as before::
 
    >>> import my_script
-    published to topic iotsample/company_name/first_last/data: {'temperature': '21', 'humidity': '51', 'light': '4095'}
-    published to topic iotsample/company_name/first_last/data: {'temperature': '21', 'humidity': '51', 'light': '4095'}
+    published to topic iotanium: {'temperature': '21', 'humidity': '51', 'light': '4095'}
+    published to topic iotanium: {'temperature': '21', 'humidity': '51', 'light': '4095'}
     ...
     ...
 
