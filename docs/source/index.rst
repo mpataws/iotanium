@@ -13,7 +13,6 @@ Onica IoTanium Developer Kit Lab
    :maxdepth: 2
    :caption: Contents:
 
-   instructor/instructor
    setup/setup
    iot_hello_world/iot_hello_world
    features/features
