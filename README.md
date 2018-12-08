@@ -20,16 +20,17 @@
         cd iotanium
         ./setup.sh
 
-  - When `setup.sh` is finished, run the following:
+  - When `setup.sh` is finished, *open a new terminal window* to get the latest node version in your env.  Then, run the following:
     
-        cd serverless
+        cd iotanium/serverless
         npm install
 
   - When `npm install` is complete, run the following replacing
     `company_name` with the name of the customer for whom we are doing
     the lab, or another name appropriate for the lab event:
-    
-        npm run setStage company_name
+        
+        #avoid _ and - in the company name, they cause naming issues with some services in this lab
+        npm run setStage company 
 
   - Finally, run the following to deploy the backend infrastructure for the lab:
 
@@ -37,15 +38,24 @@
 
   - Observe the console log output of stack deployment progress. When
     the stack deployment completes, **take note** of the API-Gateway
-    endpoint values similar to those one below. You can also get
+    endpoint values similar to those one below. You can ignore endpoints not listed below, the are not used in this lab.  You can also get
     these values later from the API-Gatway console if need be:
     
         endpoints: #these are examples, don't use these values for your lab
-        GET - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/hello
         GET - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/things
-        GET - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/things/{thingId}
-        DELETE - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/things/{thingId}
         GET - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/things/{thingId}/data
+
+  - You can test the deployment and the two endpoints above, by sending an MQTT message in the IoT Core console:
+
+      # topic: iotsample/company/thingId/data
+      # message:
+      {
+        "thingId": "7",
+        "time": 5543543,
+        "temperature": 54,
+        "humidity": 77
+      }
+
 
   - In the AWS IoT console in region us-east-1 <https://console.aws.amazon.com/iot/home?region=us-east-1#/dashboard>:
         
@@ -64,7 +74,7 @@
   -   - Have the following items gathered in previous steps, prepared to
         share with the lab attendees:
         
-          - The AWS API-Gateway `ServiceEndpoint` value
+          - The AWS API-Gateway `ServiceEndpoint` GET- values above
           - The AWS IoT Core `Endpoint` value
           - The certificate file (GUID.cert.pem)
           - The private key file (GUID.private.key)
