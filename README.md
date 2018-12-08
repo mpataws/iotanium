@@ -47,14 +47,14 @@
 
   - You can test the deployment and the two endpoints above, by sending an MQTT message in the IoT Core console:
 
-      # topic: iotsample/company/thingId/data
-      # message:
-      {
-        "thingId": "7",
-        "time": 5543543,
-        "temperature": 54,
-        "humidity": 77
-      }
+        # topic: iotsample/company/thingId/data
+        # message:
+        {
+          "thingId": "7",
+          "time": 5543543,
+          "temperature": 54,
+          "humidity": 77
+        }
 
 
   - In the AWS IoT console in region us-east-1 <https://console.aws.amazon.com/iot/home?region=us-east-1#/dashboard>:
@@ -71,7 +71,7 @@
     
         1234abcd5678-ats.iot.us-east-1.amazonaws.com
 
-  -   - Have the following items gathered in previous steps, prepared to
+  -   Have the following items gathered in previous steps, prepared to
         share with the lab attendees:
         
           - The AWS API-Gateway `ServiceEndpoint` GET- values above
