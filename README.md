@@ -22,7 +22,7 @@
 
   - When `setup.sh` is finished, *open a new terminal window* to get the latest node version in your env.  Then, run the following:
     
-        cd iotanium/serverless
+        cd serverless
         npm install
 
   - When `npm install` is complete, run the following replacing
@@ -30,7 +30,7 @@
     the lab, or another name appropriate for the lab event:
         
         #avoid _ and - in the company name, they cause naming issues with some services in this lab
-        npm run setStage company 
+        npm run setStage company
 
   - Finally, run the following to deploy the backend infrastructure for the lab:
 
@@ -71,8 +71,7 @@
     
         1234abcd5678-ats.iot.us-east-1.amazonaws.com
 
-  -   Have the following items gathered in previous steps, prepared to
-        share with the lab attendees:
+  - Have the following items gathered in previous steps, prepared to share with the lab attendees:
         
     - The AWS API-Gateway `ServiceEndpoint` GET- values above
     - The AWS IoT Core `Endpoint` value
