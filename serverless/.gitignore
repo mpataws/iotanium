@@ -1,0 +1,9 @@
+# package directories
+node_modules
+npm-debug.log
+
+# Serverless directories
+.serverless
+
+# Configured stage
+stage.conf

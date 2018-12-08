@@ -1,0 +1,214 @@
+service: iotsample
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+  # please deploy using serverless --stage parameter
+  stage: ${opt:stage, self:provider.defaultStage}
+  defaultStage: invalid
+  region: us-east-1
+
+  # additional permissions our lambda needs
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:PutItem
+        - dynamodb:GetItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource:
+        - Fn::Join:
+          - "/"
+          - - Fn::Join:
+              - ":"
+              - - arn:aws:dynamodb
+                - Ref: AWS::Region
+                - Ref: AWS::AccountId
+                - table
+            - Ref: ThingsTable
+        - Fn::Join:
+          - "/"
+          - - Fn::Join:
+              - ":"
+              - - arn:aws:dynamodb
+                - Ref: AWS::Region
+                - Ref: AWS::AccountId
+                - table
+            - Ref: DataTable
+    - Effect: Allow
+      Action:
+        - kinesis:GetRecords
+        - kinesis:GetShardIterator
+        - kinesis:DescribeStream
+        - kinesis:ListStreams
+      Resource:
+        - Fn::GetAtt:
+          - DataStream
+          - Arn
+
+  # you can define service wide environment variables here
+  environment:
+    thingsTable:
+      Ref: ThingsTable
+    dataTable:
+      Ref: DataTable
+
+# Lambda functions and triggering events
+functions:
+
+  helloHandler:
+    handler: cloud/entry/helloHandler.handler
+    events:
+      - http:
+          path: hello
+          method: get
+
+  iotHandler:
+    handler: cloud/entry/iotHandler.handler
+    events:
+      - iot:
+          sql: "SELECT * FROM '${self:service}/${self:provider.stage}/+/data'"
+
+  getThingsHandler:
+    handler: cloud/entry/restHandler.getThings
+    events:
+      - http:
+          path: things/
+          method: get
+
+  getThingHandler:
+    handler: cloud/entry/restHandler.getThing
+    events:
+      - http:
+          path: things/{thingId}
+          method: get
+
+  deleteThingHandler:
+    handler: cloud/entry/restHandler.deleteThing
+    events:
+      - http:
+          path: things/{thingId}
+          method: delete          
+
+  getThingDataHandler:
+    handler: cloud/entry/restHandler.getThingData
+    events:
+      - http:
+          path: things/{thingId}/data
+          method: get
+
+  kinesisEventHandler:
+    handler: cloud/entry/kinesisHandler.processEvent
+    events:
+      - stream:
+          type: kinesis
+          arn:
+            Fn::GetAtt:
+              - DataStream
+              - Arn
+          batchSize: 100
+          startingPosition: TRIM_HORIZON
+
+# CloudFormation resources
+resources:
+  Resources:
+    # Table to store things
+    ThingsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${self:provider.stage}-things
+        AttributeDefinitions:
+          - AttributeName: thingId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: thingId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+
+    # Table to store data records
+    DataTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:service}-${self:provider.stage}-data
+        AttributeDefinitions:
+          - AttributeName: thingId
+            AttributeType: S
+          # - AttributeName: receiveTime
+          #   AttributeType: N
+          - AttributeName: time
+            AttributeType: N
+        KeySchema:
+          - AttributeName: thingId
+            KeyType: HASH
+          - AttributeName: time
+            KeyType: RANGE
+        # LocalSecondaryIndexes:
+        #   - IndexName: thing-receiveTime
+        #     Projection:
+        #       ProjectionType: ALL
+        #     KeySchema:
+        #       - AttributeName: thingId
+        #         KeyType: HASH
+        #       - AttributeName: receiveTime
+        #         KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+
+    # Kinesis stream for IoT records
+    DataStream:
+      Type: AWS::Kinesis::Stream
+      Properties: 
+        Name: ${self:service}-${self:provider.stage}-data
+        ShardCount: 1
+
+    # Role assigned to IoT to Kinesis rule
+    KinesisRuleRole:
+      Type: AWS::IAM::Role
+      Properties:
+        Path: /
+        RoleName: ${self:service}-${self:provider.stage}-kinesisRuleRole
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - iot.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: ${self:service}-${self:provider.stage}-kinesisRulePolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - kinesis:PutRecord
+                    - kinesis:PutRecords
+                  Resource:
+                    - Fn::GetAtt:
+                        - DataStream
+                        - Arn
+
+    # IoT rule that forwards messages to Kinesis
+    KinesisRule:
+      Type: AWS::IoT::TopicRule
+      Properties:
+        RuleName: ${self:service}_${self:provider.stage}_sendToKinesis
+        TopicRulePayload:
+          Sql: "SELECT * FROM '${self:service}/${self:provider.stage}/+/data'"
+          RuleDisabled: false
+          Actions:
+            - Kinesis:
+                StreamName:
+                  Ref: DataStream
+                RoleArn:
+                  Fn::GetAtt:
+                    - KinesisRuleRole
+                    - Arn
+                PartitionKey: 
+                  Fn::Join: ['', ['$', '{newuuid()}']]

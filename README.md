@@ -1,4 +1,4 @@
-00 - AWS Account Setup (Lab Instructor Only) ==============
+# AWS Account Setup (Lab Instructor Only)
 
   - Use a sandbox/lab account for this lab. Onica users can use thier
     sso lab account.
@@ -16,15 +16,12 @@
 
   - In your cloud9 environment, do:
     
-        git clone https://bitbucket.org/nbdev/serverless-workshop.git
-        cd serverless-workshop
-        git checkout cloud9-setup
+        git clone -b lab-setup https://github.com/onicagroup/iotanium.git
+        cd iotanium
         ./setup.sh
 
   - When `setup.sh` is finished, run the following:
     
-        git reset --hard
-        git checkout step-1
         cd serverless
         npm install
 
@@ -34,10 +31,8 @@
     
         npm run setStage company_name
 
-  - Finally, run the following:
-    
-        git reset --hard
-        git checkout step-10
+  - Finally, run the following to deploy the backend infrastructure for the lab:
+
         npm start
 
   - Observe the console log output of stack deployment progress. When

@@ -1,0 +1,18 @@
+{
+  "name": "iotsample",
+  "version": "0.1.0",
+  "description": "Serverless Workspace Sample",
+  "dependencies": {},
+  "devDependencies": {
+    "aws-sdk": "2.54.0",
+    "serverless": "^1.26.1"
+  },
+  "scripts": {
+    "start": "node scripts/deploy.js",
+    "setStage": "node scripts/setStage.js",
+    "df": "node scripts/deployFunction.js",
+    "if": "node scripts/invokeFunction.js"
+  },
+  "author": "Onica",
+  "private": true
+}
