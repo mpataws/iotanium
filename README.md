@@ -37,14 +37,17 @@
 
   - Observe the console log output of stack deployment progress. When
     the stack deployment completes, **take note** of the API-Gateway
-    ServiceEndpoint value similar to the one below. You can also get
-    this value later from the API-Gatway
-        console:
+    endpoint values similar to those one below. You can also get
+    these values later from the API-Gatway console if need be:
     
-        ServiceEndpoint: https://o2ykzz9u73.execute-api.us-east-1.amazonaws.com/company_name
+        endpoints: #these are examples, don't use these values for your lab
+        GET - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/hello
+        GET - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/things
+        GET - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/things/{thingId}
+        DELETE - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/things/{thingId}
+        GET - https://uh8cgm2ht8.execute-api.us-east-1.amazonaws.com/onica/things/{thingId}/data
 
-  -   - In the AWS IoT console in region us-east-1
-        <https://console.aws.amazon.com/iot/home?region=us-east-1#/dashboard>:
+  - In the AWS IoT console in region us-east-1 <https://console.aws.amazon.com/iot/home?region=us-east-1#/dashboard>:
         
           - Create a new certificate, use "One-click certificate
             creation (recommended)"
