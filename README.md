@@ -59,31 +59,31 @@
 
   - In the AWS IoT console in region us-east-1 <https://console.aws.amazon.com/iot/home?region=us-east-1#/dashboard>:
         
-  - Create a new certificate, use "One-click certificate
-    creation (recommended)"
-  - **download** the cert (GUID.cert.pem) and private key
-    (GUID.private.key)
-  - activate the certificate
-  - attach a suitable IAM policy
+    - Create a new certificate, use "One-click certificate
+      creation (recommended)"
+    - **download** the cert (GUID.cert.pem) and private key
+      (GUID.private.key)
+    - activate the certificate
+    - attach a suitable IAM policy
 
-  - IN the AWS IoT Console, choose **Settings** and note the IoT
-    Endpoint Value, similar to:
+    - IN the AWS IoT Console, choose **Settings** and note the IoT
+      Endpoint Value, similar to:
     
         1234abcd5678-ats.iot.us-east-1.amazonaws.com
 
   -   Have the following items gathered in previous steps, prepared to
         share with the lab attendees:
         
-  - The AWS API-Gateway `ServiceEndpoint` GET- values above
-  - The AWS IoT Core `Endpoint` value
-  - The certificate file (GUID.cert.pem)
-  - The private key file (GUID.private.key)
-  - SSID, username, and password for a wifi network provided by
-    the facility hosting the lab. This network must not require
-    the use any web interface during the login process, just
-    simple u/p auth. If such a network is not available, bring a
-    wifi hotspot. The lab activities cannot be completed using a
-    network that requires web auth.
+    - The AWS API-Gateway `ServiceEndpoint` GET- values above
+    - The AWS IoT Core `Endpoint` value
+    - The certificate file (GUID.cert.pem)
+    - The private key file (GUID.private.key)
+    - SSID, username, and password for a wifi network provided by
+      the facility hosting the lab. This network must not require
+      the use any web interface during the login process, just
+      simple u/p auth. If such a network is not available, bring a
+      wifi hotspot. The lab activities cannot be completed using a
+      network that requires web auth.
 
   - When the lab is finished, tear down:
     
