@@ -166,7 +166,7 @@ Factory Reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In the event that a board becomes unresponsive, the firmware may be flashed back to the original factory settings:
 
-- Download and install ``esptool.py`` following the instructions found `here <https://github.com/espressif/esptool>`_ 
+- Install ``esptool.py`` following the instructions found `here <https://github.com/espressif/esptool>`_ 
 
 - Download the ``v0.1-preview.bin`` firmware file found `here <https://github.com/onicagroup/iotanium/releases/download/v0.1-preview/v0.1-preview.bin>`_
 
