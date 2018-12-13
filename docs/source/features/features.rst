@@ -176,9 +176,9 @@ In the event that a board becomes unresponsive, the firmware may be flashed back
 
     esptool.py --chip esp32 -p /path/to/usbserial erase_flash
 
-- When the board is erased, navigate to the directory location where you downloaded the firmware .bin above, and flash the firmware::
+- When the board is erased, navigate to the directory location where you downloaded the ``v0.1-preview.bin`` firmware above, and flash the firmware::
 
-    esptool.py --chip esp32 -p /path/to/usbserial write_flash -z 0x1000 firmware.bin
+    esptool.py --chip esp32 -p /path/to/usbserial write_flash -z 0x1000 v0.1-preview.bin
     
 - You should see output similar to that below, indicating your board has been sucessfully flashed::
 
