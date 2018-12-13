@@ -162,6 +162,36 @@ In this state, a user can easily connect to the Access Point WiFi network, and t
 7. Connect to the device AP and WebREPL using the same steps described in section :doc:`../setup/setup`.
 
 
+Factory Reset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In the event that a board becomes unresponsive, the firmware may be flashed back to the original factory settings:
 
+- Download and install ``esptool.py`` following the instructions found `here <https://github.com/espressif/esptool>`_ 
 
+- Download the ``v0.1-preview.bin`` firmware file found `here <https://github.com/onicagroup/iotanium/releases/download/v0.1-preview/v0.1-preview.bin>`_
 
+- Establish a serial connection with your IoTanium board.  Instructions for doing so can be found `here <https://docs.espressif.com/projects/esp-idf/en/latest/get-started/establish-serial-connection.html#>`_.  Note that the IoTanium board uses an FT232RL usb to serial chip, so the intructions may need to be modified slightly depending on your operating system.
+
+- In a console terminal execute the command below to erase the board::
+
+    esptool.py --chip esp32 -p /path/to/usbserial erase_flash
+
+- When the board is erased, navigate to the directory location where you downloaded the firmware .bin above, and flash the firmware::
+
+    esptool.py --chip esp32 -p /path/to/usbserial write_flash -z 0x1000 firmware.bin
+    
+- You should see output similar to that below, indicating your board has been sucessfully flashed::
+
+    Uploading stub...
+    Running stub...
+    Stub running...
+    Configuring flash size...
+    Auto-detected Flash size: 4MB
+    Compressed 1079600 bytes to 682898...
+    Wrote 1079600 bytes (682898 compressed) at 0x00001000 in 60.6 seconds (effective 142.4 kbit/s)...
+    Hash of data verified.
+
+    Leaving...
+    Hard resetting via RTS pin...
+
+- You can now return to the :doc:`../setup/setup` section to re-connect to your board.
