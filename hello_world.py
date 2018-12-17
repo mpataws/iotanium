@@ -26,13 +26,16 @@ client = mqtt.MQTTClient(thingId,endpoint,ssl = True, ssl_params = {'key': key,'
 
 while True:
     client.connect()
+    '''
     data = {
         "thingId": thingId,
         "time": time(),
-        "temperature": 0,
-        "humidity": 0,
-        "light": 0
+        "temperature": foo,
+        "humidity": bar,
+        "light": baz
     }
+    '''
+
     client.publish(topic, json.dumps(data))
     print("published to topic %s: %s" % (topic, data))
     client.disconnect()
