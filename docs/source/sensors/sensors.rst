@@ -11,12 +11,12 @@ Locate the small bag of components included with your IoTanium DevKit.  **Note: 
 - With jumper wires, make the following connections:
    - A20 to any free hole on the red (+) rail.  This provides power to the DHT11.
    - C21 to C3.  This connects the 'data' pin on the DHT 11 to the input pin 4 on the IoTanium.
-   - A23 to any free hole on the black (-) rail.  This provides ground to the DHT11.
+   - A23 to any free hole on the blue (-) rail.  This provides ground to the DHT11.
 
 - Before continuing, inspect and double check the wiring above, to avoid potentially damaging or destroying your IoTanium developer board.
 - When you are confident your wiring is correct, use jumper wires to connect power and ground from your circuit to the dev board:
    - B15 to any free hole on the red (+) rail.
-   - H15 to any free hole on the black (-) rail.
+   - H15 to any free hole on the blue (-) rail.
 
 Your finished circuit should look like the image below, note that the third pin on the DHT-11 is not used:
 
@@ -47,10 +47,10 @@ Locate the photocell in the bag of components.  It has two long legs, and a wavy
 
 - **Disconnect** the following connections made in the previous step:
    - The connection between B15 and the red (+) rail.
-   - The connection between H15 and the black (-) rail.
+   - The connection between H15 and the blue (-) rail.
 
 - Connect your photocell to E28 and E30.  The component does not have a polarity, so it can be connected either way.
-- Locate another 10K ohm resistor (light brown with brown, black, orange, and gold bands).  Connect it between C28 and any free hole on the black (-) rail.  This is a `pulldown` resistor to limit the current of the photocell to a controlled range, and provide a path to ground.
+- Locate another 10K ohm resistor (light brown with brown, black, orange, and gold bands).  Connect it between C28 and any free hole on the blue (-) rail.  This is a `pulldown` resistor to limit the current of the photocell to a controlled range, and provide a path to ground.
 - With jumper wires, make the following connections:
    - D30 to any free hole on the red (+) rail. This will power the photocell.
    - D28 to H13.  This will connect the output side of the photocell to pin 36 on the dev board.
@@ -58,7 +58,7 @@ Locate the photocell in the bag of components.  It has two long legs, and a wavy
 - Before continuing, inspect and double check the wiring above, to avoid potentially damaging or destroying your IoTanium developer board.
 - When you are confident your wiring is correct, use jumper wires to connect power and ground from your circuit to the dev board:
    - B15 to any free hole on the red (+) rail.
-   - H15 to any free hole on the black (-) rail.
+   - H15 to any free hole on the blue (-) rail.
 
 .. image:: ../img/temp_humid_ldr_breadboard.png
     :width: 2550px

@@ -6,7 +6,7 @@ Prerequisites
 Ensure you have been provided the following by your lab instructor:
 
 - An IoTanium Developer Kit
-- An AWS API-Gateway ``ServiceEndpoint`` value
+- An AWS API-Gateway ``ServiceEndpoint`` urls
 - An AWS IoT Core ``Endpoint`` value
 - Two IoT Core certificate files
     - Certificate file, named ``######.cert.pem``
@@ -17,6 +17,7 @@ Ensure you have been provided the following by your lab instructor:
 
 Unboxing and Assembly
 --------------------- 
+- **Important, before assembly:** on the back of your IoTanium Developer board, you will find a label with yoour board's MAC Address.  Make a note of this MAC address as you will need it later to connect to your board.
 - Unbox and assemble your IoTanium Developer Kit using the instructions provided below (click image to enlarge):
 
 .. image:: ../img/assembly.png
@@ -46,8 +47,8 @@ Your IoTanium device supports a version of the Python REPL called the WebREPL, w
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Find the small rectangular LED labelled `STATUS`, it is located just above the blue button on the IoTanium device.  The STATUS LED is used to indicate when the device enters Access Point (AP mode), which will allow your workstation to connect to the device via WiFi.
 - Briefly unplug the power from the device, and plug it back in.  After a moment, the STATUS LED will blink rapidly for 5 seconds, indicating AP mode.
-- In your IoTanium Developer kit, you will find a paper card with your board's Access Point (AP) network SSID.  Find the card and note the network SSID for your board.
-- Connect your workstation WiFi to the network you noted in the previous step. ``IoTanium-######``, with password ``iotanium``.   **IMPORTANT:  In a lab environment with many users, the network SSID's will look very similar.  Pay `very` close attention to your network ID, and only connect to the correct network for your device!!**
+- On the back of your IoTanium Developer board, you will find a label with yoour board's MAC Address, that you would have noted in an earlier step.  Your board's Access Point (AP) network SSID will be ``IoTanium-<MAC ADDRESS>``>.
+- Connect your workstation WiFi to the network you noted in the previous step. ``IoTanium-<MAC ADDRESS>``, with password ``iotanium``.   **IMPORTANT:  In a lab environment with many users, the network SSID's will look very similar.  Pay `very` close attention to your network ID, and only connect to the correct network for your device!!**
 
 2 - Connect to the WebREPL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -114,9 +115,9 @@ Your IoTanium device supports a version of the Python REPL called the WebREPL, w
 
 5 - Connect to the WebREPL over WiFi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Click **Disconnect** in the WebREPL browser window.
-- Disconnect your workstation from the ``IoTanium-######`` wireless network.
-- Reconnect your workstation to your local WiFi network.  **Note: this must be the same network to which you connected the IoTanium board by uploading the username and password**
+- Click the **Disconnect** button in the WebREPL browser window.
+- Disconnect your workstation from the ``IoTanium-<MAC ADDRESS>`` wireless network.
+- Reconnect your workstation to your local WiFi network.  **Note: this must be the same network SSID that you just uploaded to the IoTanium board.  Connecting your workstation to a different SSID will cause you to be unable to reach your IoTanium board to connect below.**
 - **Refresh** the WebREPL page in your browser.
 - In the connection field at the top of the WebREPL page, paste the value you copied in step 4 above.
 - Click the **Connect** button, and provide password ``iotanium`` when prompted.  You should now be connected to your device via WebREPL over your wifi::

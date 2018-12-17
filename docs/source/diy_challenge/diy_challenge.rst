@@ -15,12 +15,23 @@ Here are some hints to help you get started:
 
    iotsample/company_name/first_last/data
 
-- You have completed the challenge successfully when your device is sending json data like that shown below, to the same AWS IoT endpoint as before::
+- You have completed the challenge successfully when your device is sending json data like that shown below, to the same AWS IoT endpoint as before.  Note that the **time** and **thingId** fields are required, and are already correctly populated in the commented out example in ``hello_world.py``::
 
    >>> import my_script
-    published to topic iotsample/company_name/first_last/data: {'temperature': '21', 'humidity': '51', 'light': '4095'}
-    published to topic iotsample/company_name/first_last/data: {'temperature': '21', 'humidity': '51', 'light': '4095'}
+    published to topic iotsample/company_name/thing_id/data: {"thingId": thingId,"time": 600,"temperature": '21',"humidity": '51',"light": '4095'}
+    published to topic iotsample/company_name/thing_id/data: {"thingId": thingId,"time": 605,"temperature": '21',"humidity": '51',"light": '4095'}
     ...
     ...
 
 Did you get the desired data to send?  If so, great work!!
+
+
+Helpful Hints for DIY Challenge
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. When troubleshooting your code, sometimes you will want to ``import my_script`` again.  However, if you've already imported that module in a given session, MicroPython will not import it again.  To resolve this::
+
+   >>import sys
+   >>del sys.modules['my_script']
+   >>import my_script
+
+2. 

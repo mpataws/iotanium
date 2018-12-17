@@ -13,7 +13,7 @@ Add Config Values to `hello_world.py`
 - Edit the lines below, replacing the values with the correct values.  **all values are 100% lower case exactly as shown**::
 
     # config
-    device_id = 'first_last'
+    thingId = 'team_name' #choose any team name, make it one single word, all lowercase
     company_name = 'your_company_name'
     endpoint = 'aws_iot_endpoint_dns_hostname'
 
@@ -45,8 +45,8 @@ Send 'Hello World!' to AWS IoT
 - In the WebREPL terminal, run the ``hello_world.py`` script, and notice the message publishing logs.  Note: to execute a script manually in Micropython, you ``import`` the script as a module, leaving off the ``.py`` extension as shown below.
 
     >>> import hello_world
-    published to topic iotsample/company_name/first_last/data: {'message': 'Hello World from first_last'}
-    published to topic iotsample/company_name/first_last/data: {'message': 'Hello World from first_last'}
+    published to topic iotsample/company_name/first_last/data: {'message': 'Hello World from <thingId>'}
+    published to topic iotsample/company_name/first_last/data: {'message': 'Hello World from <thingId>'}
     ...
     ...
 
