@@ -35,6 +35,7 @@ while True:
         "light": baz
     }
     '''
+    data = {'message': "Hello World from %s" % thingId}
 
     client.publish(topic, json.dumps(data))
     print("published to topic %s: %s" % (topic, data))
