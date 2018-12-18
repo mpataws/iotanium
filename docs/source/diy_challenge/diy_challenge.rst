@@ -13,13 +13,13 @@ Here are some hints to help you get started:
 
 - Leave the ``topic`` values unchanged in your script.  That is, similar to::
 
-   iotsample/company_name/first_last/data
+   iotsample/company_name/team_name/data
 
 - You have completed the challenge successfully when your device is sending json data like that shown below, to the same AWS IoT endpoint as before.  Note that the **time** and **thingId** fields are required, and are already correctly populated in the commented out example in ``hello_world.py``::
 
    >>> import my_script
-    published to topic iotsample/company_name/thing_id/data: {"thingId": thingId,"time": 600,"temperature": '21',"humidity": '51',"light": '4095'}
-    published to topic iotsample/company_name/thing_id/data: {"thingId": thingId,"time": 605,"temperature": '21',"humidity": '51',"light": '4095'}
+    published to topic iotsample/company_name/team_name/data: {"thingId": thingId,"time": 600,"temperature": '21',"humidity": '51',"light": '4095'}
+    published to topic iotsample/company_name/team_name/data: {"thingId": thingId,"time": 605,"temperature": '21',"humidity": '51',"light": '4095'}
     ...
     ...
 
