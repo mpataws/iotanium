@@ -12,9 +12,9 @@ def read_pem(ext):
     return contents
 
 # config
-thing_id = 'go_team' #all lowercase, _ separator, no special chars
-company_name = 'aws'
-endpoint = 'a5ccl8jzi9dhs-ats.iot.us-east-1.amazonaws.com'
+thing_id = 'team_name' #all lowercase, _ separator, no special chars
+company_name = 'your_company_name'
+endpoint = 'aws_iot_endpoint_dns_hostname'
 
 publish_rate = 5 # seconds between publishing messages
 fnames = os.listdir()
