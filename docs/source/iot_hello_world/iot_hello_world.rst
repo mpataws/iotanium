@@ -13,7 +13,7 @@ Add Config Values to `hello_world.py`
 - Edit the lines below, replacing the values with the correct values.  **all values are 100% lower case exactly as shown**::
 
     # config
-    thingId = 'team_name' #choose any team name, make it one single word, all lowercase
+    thing_id = 'team_name' #all lowercase, _ separator, no special chars
     company_name = 'your_company_name'
     endpoint = 'aws_iot_endpoint_dns_hostname'
 
