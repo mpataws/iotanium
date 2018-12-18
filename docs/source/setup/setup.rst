@@ -30,7 +30,7 @@ Your IoTanium device supports a version of the Python REPL called the WebREPL, w
 
 1 - Enable the IoTanium Access Point, and Connect
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-- Find the small rectangular LED labelled `STATUS`, it is located just above the blue button on the IoTanium device.  The STATUS LED is used to indicate when the device enters Access Point (AP mode), which will allow your workstation to connect to the device via WiFi.
+- Find the small rectangular LED labelled `STATUS`, it is located just above the blue button on the IoTanium device.  The STATUS LED is used to indicate when the device enters Access Point (AP) mode, which will allow your workstation to connect to the device via WiFi.
 - Briefly unplug the power from the device, and plug it back in.  After a moment, the STATUS LED will blink rapidly for 5 seconds, indicating AP mode.
 - Connect your workstation WiFi to the network named ``IoTanium-######``, with password ``iotanium``
 
