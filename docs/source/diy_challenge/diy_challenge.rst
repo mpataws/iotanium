@@ -30,9 +30,9 @@ Helpful Hints for DIY Challenge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - When troubleshooting your code, sometimes you will want to ``import my_script`` again in the same session.  However, if you've already imported that module in a given session, MicroPython will not import it again.  To resolve this::
 
-   >>import sys
-   >>del sys.modules['my_script'] #do not include the .py extension
-   >>import my_script
+   >> import sys
+   >> del sys.modules['my_script'] #do not include the .py extension
+   >> import my_script
 
 - If you lose connection with your device and cannot re-establish it, use Safe Mode boot to re-enable the access point and re-connect to your board: 
 
