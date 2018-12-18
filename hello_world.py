@@ -12,30 +12,30 @@ def read_pem(ext):
     return contents
 
 # config
-thingId = 'team_name'
-company_name = 'your_company_name'
-endpoint = 'aws_iot_endpoint_dns_hostname'
+thing_id = 'go_team' #all lowercase, _ separator, no special chars
+company_name = 'aws'
+endpoint = 'a5ccl8jzi9dhs-ats.iot.us-east-1.amazonaws.com'
 
 publish_rate = 5 # seconds between publishing messages
 fnames = os.listdir()
 cert = read_pem('.crt')
 key = read_pem('.key')
-topic = "iotsample/%s/%s/data" % (company_name, thingId)
+topic = "iotsample/%s/%s/data" % (company_name, thing_id)
 
-client = mqtt.MQTTClient(thingId,endpoint,ssl = True, ssl_params = {'key': key,'cert': cert})
+client = mqtt.MQTTClient(thing_id,endpoint,ssl = True, ssl_params = {'key': key,'cert': cert})
 
 while True:
     client.connect()
     '''
     data = {
-        "thingId": thingId,
+        "thingId": thing_id,
         "time": time(),
         "temperature": foo,
         "humidity": bar,
         "light": baz
     }
     '''
-    data = {'message': "Hello World from %s" % thingId}
+    data = {'message': "Hello World from %s" % thing_id}
 
     client.publish(topic, json.dumps(data))
     print("published to topic %s: %s" % (topic, data))
