@@ -1,8 +1,8 @@
 {
-	"wlans": [{
-			"friendly_name": "lab wifi",
-			"essid": "onica-iotanium-lab",
-			"passwd": "iotanium"
-		}
-	]
+    "wlans": [{
+            "friendly_name": "friendly_name",
+            "essid": "wifi_ssid",
+            "passwd": "wifi_password"
+        }
+    ]
 }
