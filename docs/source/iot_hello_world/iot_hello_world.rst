@@ -21,7 +21,7 @@ Configure AWS IoT, and Download Certificates
     :alt: ../img/AWS_Management_Console_IOT.png
     :width: 1024px
 
-- Once in the AWS IoT Console, navigate to **Certificates** and click **Create**
+- Once in the AWS IoT Console, navigate to **Secure >> Certificates** and click **Create**
 .. image:: ../img/hello-world-cert1.png
     :align: center
     :alt: ../img/hello-world-cert1.png
@@ -80,6 +80,21 @@ Configure AWS IoT, and Download Certificates
 .. image:: ../img/hello-world-cert6.png
     :align: center
     :alt: ../img/hello-world-cert6.png
+    :width: 1024px
+
+- Attach the policy you just created to your certificate.  To do this:
+    1. In the AWS IoT Console, navigate to **Secure >> Certificates**
+    2. Click the ellipsis ``...`` on the certificate you created above, and  choose **Attach Policy**
+    3. Chose the ``iotanium`` policy you created, and click **Attach**
+
+.. image:: ../img/hello-world-cert7.png
+    :align: center
+    :alt: ../img/hello-world-cert7.png
+    :width: 1024px
+
+.. image:: ../img/hello-world-cert8.png
+    :align: center
+    :alt: ../img/hello-world-cert8.png
     :width: 1024px
 
 Add your IoT Endpoint to `hello_world.py`
