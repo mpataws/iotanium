@@ -10,7 +10,7 @@ Unboxing and Assembly
     :align: center
     :alt: img/assembly.png
 
-- Power your device with the micro-usb cable provided to the micro-usb port on the IoTanium board.  You can use nay standard USB port, or the USB wall adapter provided.
+- Power your device with the micro-usb cable provided to the micro-usb port on the IoTanium board.  You can use any standard USB port, or the USB wall adapter provided.
 ----
 
 Download or Clone Repository
@@ -24,7 +24,7 @@ Download or Clone Repository
 
 Connect to Your Device
 ---------------------
-You IoTanium development board comes pre-flashed with an optimized version of `Micropython <http://micropython.org/>`_, a lean and efficient implementation of the Python 3 programming language that includes a small subset of the Python standard library, and is optimised to run on microcontrollers and in constrained environments.  Python utilizes a interactive 'Read-Evaluate-Print-Loop' (REPL) as a programming interface, which takes single user inputs or expressions, evaluates them, and returns the results to the user.  The REPL provides an interactive ``>>>`` prompt when working with Python directly in a command line terminal.
+Your IoTanium development board comes pre-flashed with an optimized version of `Micropython <http://micropython.org/>`_, a lean and efficient implementation of the Python 3 programming language that includes a small subset of the Python standard library, and is optimised to run on microcontrollers and in constrained environments.  Python utilizes a interactive 'Read-Evaluate-Print-Loop' (REPL) as a programming interface, which takes single user inputs or expressions, evaluates them, and returns the results to the user.  The REPL provides an interactive ``>>>`` prompt when working with Python directly in a command line terminal.
 
 Your IoTanium device supports a version of the Python REPL called the WebREPL, which can be used to interact with the device in a web browser over WiFi.  The section below will cover configuring your device for your local WiFi network, and connecting to your device via the WebREPL:
 

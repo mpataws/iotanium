@@ -15,7 +15,7 @@ This walkthough assumes you have:
 Configure AWS IoT, and Download Certificates
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - Log in to your AWS account Management Console
-- On the Management Console Dashboard, use the search tool tool to locate ``IoT Core``, and click on it.
+- On the Management Console Dashboard, use the search tool to locate ``IoT Core``, and click on it.
 .. image:: ../img/AWS_Management_Console_IOT.png
     :align: center
     :alt: ../img/AWS_Management_Console_IOT.png
